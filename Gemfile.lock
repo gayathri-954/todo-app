@@ -74,7 +74,10 @@ GEM
       uri (>= 0.13.1)
     ast (2.4.3)
     base64 (0.3.0)
+<<<<<<< HEAD
     bcrypt (3.1.20)
+=======
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
     bcrypt_pbkdf (1.1.1)
     benchmark (0.4.1)
     bigdecimal (3.3.1)
@@ -90,12 +93,15 @@ GEM
     debug (1.11.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
+<<<<<<< HEAD
     devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+=======
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
     dotenv (3.1.8)
     drb (2.2.3)
     ed25519 (1.4.0)
@@ -167,13 +173,19 @@ GEM
       racc (~> 1.4)
     nokogiri (1.18.10-arm64-darwin)
       racc (~> 1.4)
+<<<<<<< HEAD
     nokogiri (1.18.10-x86_64-darwin)
       racc (~> 1.4)
+=======
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
     nokogiri (1.18.10-x86_64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.18.10-x86_64-linux-musl)
       racc (~> 1.4)
+<<<<<<< HEAD
     orm_adapter (0.5.0)
+=======
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
     ostruct (0.6.3)
     parallel (1.27.0)
     parser (3.3.9.0)
@@ -183,13 +195,20 @@ GEM
     pg (1.6.2-aarch64-linux)
     pg (1.6.2-aarch64-linux-musl)
     pg (1.6.2-arm64-darwin)
+<<<<<<< HEAD
     pg (1.6.2-x86_64-darwin)
+=======
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
     pg (1.6.2-x86_64-linux)
     pg (1.6.2-x86_64-linux-musl)
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
+<<<<<<< HEAD
     prism (1.5.2)
+=======
+    prism (1.6.0)
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
     psych (5.2.6)
       date
       stringio
@@ -244,9 +263,12 @@ GEM
     regexp_parser (2.11.3)
     reline (0.6.2)
       io-console (~> 0.5)
+<<<<<<< HEAD
     responders (3.2.0)
       actionpack (>= 7.0)
       railties (>= 7.0)
+=======
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
     rubocop (1.81.1)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
@@ -305,7 +327,10 @@ GEM
     thruster (0.1.15)
     thruster (0.1.15-aarch64-linux)
     thruster (0.1.15-arm64-darwin)
+<<<<<<< HEAD
     thruster (0.1.15-x86_64-darwin)
+=======
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
     thruster (0.1.15-x86_64-linux)
     timeout (0.4.3)
     tsort (0.2.0)
@@ -316,8 +341,11 @@ GEM
     unicode-emoji (4.1.0)
     uri (1.0.4)
     useragent (0.16.11)
+<<<<<<< HEAD
     warden (1.2.9)
       rack (>= 2.0.9)
+=======
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
     websocket-driver (0.8.0)
       base64
       websocket-extensions (>= 0.1.0)
@@ -330,8 +358,12 @@ PLATFORMS
   aarch64-linux-musl
   arm-linux-gnu
   arm-linux-musl
+<<<<<<< HEAD
   arm64-darwin
   x86_64-darwin
+=======
+  arm64-darwin-25
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
   x86_64-linux
   x86_64-linux-gnu
   x86_64-linux-musl
@@ -340,7 +372,10 @@ DEPENDENCIES
   bootsnap
   brakeman
   debug
+<<<<<<< HEAD
   devise
+=======
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
   kamal
   pg (~> 1.1)
   puma (>= 5.0)
@@ -353,4 +388,8 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
+<<<<<<< HEAD
    2.5.21
+=======
+   2.7.2
+>>>>>>> 22a9ef8 (Initial base Rails API setup)

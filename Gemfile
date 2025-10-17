@@ -4,8 +4,11 @@ source "https://rubygems.org"
 gem "rails", "~> 8.0.3"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
+<<<<<<< HEAD
 gem "devise"
 
+=======
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
@@ -15,7 +18,11 @@ gem "puma", ">= 5.0"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+<<<<<<< HEAD
 gem "tzinfo-data", platforms: %i[windows jruby]
+=======
+gem "tzinfo-data", platforms: %i[ windows jruby ]
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
 
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem "solid_cache"
@@ -39,7 +46,11 @@ gem "thruster", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+<<<<<<< HEAD
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
+=======
+  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
