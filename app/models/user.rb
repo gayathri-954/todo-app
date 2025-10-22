@@ -1,8 +1,12 @@
+# app/models/user.rb
 class User < ApplicationRecord
-  # Devise modules (if using Devise)
+  # Devise modules for authentication
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # Add this line to associate todos with users
+  # Devise Token Auth for API token-based authentication
+  include DeviseTokenAuth::Concerns::User
+
+  # Association with todos
   has_many :todos, dependent: :destroy
 end
