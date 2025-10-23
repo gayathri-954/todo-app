@@ -1,19 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe TodosController, type: :controller do
-  let(:user) { User.create!(email: "test@example.com", password: "password") }
-  let!(:todo) { Todo.create!(title: "Test Todo", description: "Test Desc", user: user) }
+  # Use FactoryBot to create a user
+  let(:user) { create(:user) }
+  
+  # Create a todo for the user
+  let!(:todo) { create(:todo, user: user) }
 
+  # Generate auth headers for Devise Token Auth
+  let(:headers) { user.create_new_auth_token }
+
+  # Authenticate user before each request
   before do
-    allow(controller).to receive(:authenticate_user!).and_return(true)
-    allow(controller).to receive(:current_user).and_return(user)
+    request.headers.merge!(headers)
   end
 
   describe "GET #index" do
     it "returns all todos for current user" do
       get :index
       expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body)["todos"].first["title"]).to eq("Test Todo")
+      expect(JSON.parse(response.body)["todos"].first["title"]).to eq(todo.title)
     end
   end
 
@@ -72,5 +78,3 @@ RSpec.describe TodosController, type: :controller do
     end
   end
 end
-
-
