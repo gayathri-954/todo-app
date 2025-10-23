@@ -5,7 +5,11 @@ class TodosController < ApplicationController
   # GET /todos
   def index
     todos = current_user.todos
-    render json: { todos: todos }, status: :ok
+    if todos.any?
+      render json: { todos: todos }, status: :ok
+    else
+      render json: { message: "No todos as of now" }, status: :ok
+    end
   end
 
   # GET /todos/:id

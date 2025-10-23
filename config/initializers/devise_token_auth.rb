@@ -5,15 +5,16 @@ DeviseTokenAuth.setup do |config|
   # client is responsible for keeping track of the changing tokens. Change
   # this to false to prevent the Authorization header from changing after
   # each request.
-  # config.change_headers_on_each_request = true
+  # Setting this to true forces login before every request
+  config.change_headers_on_each_request = true
 
   # By default, users will need to re-authenticate after 2 weeks. This setting
   # determines how long tokens will remain valid after they are issued.
-  # config.token_lifespan = 2.weeks
+  config.token_lifespan = 1.year
 
   # Limiting the token_cost to just 4 in testing will increase the performance of
   # your test suite dramatically. The possible cost value is within range from 4
-  # to 31. It is recommended to not use a value more than 10 in other environments.
+  # to 31. The recommended value is not more than 10 in other environments.
   config.token_cost = Rails.env.test? ? 4 : 10
 
   # Sets the max number of concurrent devices per user, which is 10 by default.
