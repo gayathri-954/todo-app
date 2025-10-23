@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 # syntax=docker/dockerfile:1
 # check=error=true
 
@@ -7,8 +9,9 @@
 
 # For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
 
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version
-ARG RUBY_VERSION=3.2.2
+ARG RUBY_VERSION=3.4.7
 FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 
 # Rails app lives here
@@ -45,9 +48,12 @@ COPY . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
+<<<<<<< HEAD
+=======
 
 
 
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
 # Final stage for app image
 FROM base
 

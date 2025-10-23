@@ -61,13 +61,19 @@ aliases:
   logs: app logs -f
   dbc: app exec --interactive --reuse "bin/rails dbconsole"
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
 # Use a persistent storage volume for sqlite database files and local Active Storage files.
 # Recommended to change this to a mounted volume path that is backed up off server.
 volumes:
   - "todo_app_storage:/rails/storage"
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
 # Bridge fingerprinted assets, like JS and CSS, between versions to avoid
 # hitting 404 on in-flight requests. Combines all files from new and old
 # version inside the asset_path.
@@ -77,12 +83,21 @@ asset_path: /rails/public/assets
 builder:
   arch: amd64
 
+<<<<<<< HEAD
+  # Build image via remote server (useful for faster amd64 builds on arm64 computers)
+  # remote: ssh://docker@docker-builder-server
+  #
+  # Pass arguments and secrets to the Docker build process
+  args:
+    RUBY_VERSION: ruby-3.4.7
+=======
   # # Build image via remote server (useful for faster amd64 builds on arm64 computers)
   # remote: ssh://docker@docker-builder-server
   #
   # # Pass arguments and secrets to the Docker build process
   # args:
-  #   RUBY_VERSION: 3.2.2
+  #   RUBY_VERSION: ruby-3.4.7
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
   # secrets:
   #   - GITHUB_TOKEN
   #   - RAILS_MASTER_KEY

@@ -1,1 +1,5 @@
-3.2.2
+<<<<<<< HEAD
+3.4.0
+=======
+ruby-3.4.7
+>>>>>>> 22a9ef8 (Initial base Rails API setup)
