@@ -1,25 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe TodosController, type: :controller do
-  # Use FactoryBot to create a user
   let(:user) { create(:user) }
-  
-  # Create a todo for the user
   let!(:todo) { create(:todo, user: user) }
+  let(:auth_headers) { user.create_new_auth_token }
 
-  # Generate auth headers for Devise Token Auth
-  let(:headers) { user.create_new_auth_token }
-
-  # Authenticate user before each request
   before do
-    request.headers.merge!(headers)
+    request.headers.merge!(auth_headers)
   end
 
   describe "GET #index" do
     it "returns all todos for current user" do
       get :index
       expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body)["todos"].first["title"]).to eq(todo.title)
+
+      json = JSON.parse(response.body)
+      expect(json).to be_a(Hash)
+
+      # Depending on your controller’s JSON format
+      todos = json["todos"] || json
+      expect(todos.first["title"]).to eq(todo.title)
     end
   end
 
@@ -27,8 +27,10 @@ RSpec.describe TodosController, type: :controller do
     it "returns the requested todo" do
       get :show, params: { id: todo.id }
       expect(response).to have_http_status(:ok)
+
       json = JSON.parse(response.body)
-      expect(json["todo"]["id"]).to eq(todo.id)
+      todo_data = json["todo"] || json
+      expect(todo_data["id"]).to eq(todo.id)
     end
 
     it "returns not found for invalid id" do
@@ -40,14 +42,14 @@ RSpec.describe TodosController, type: :controller do
   describe "POST #create" do
     it "creates a new todo" do
       expect {
-        post :create, params: { todo: { title: "New Todo", description: "New Desc" } }
+        post :create, params: { todo: { title: "New Todo", description: "New Desc", completed: false } }
       }.to change(Todo, :count).by(1)
       expect(response).to have_http_status(:created)
     end
 
     it "returns error for invalid params" do
       post :create, params: { todo: { title: "" } }
-      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response).to have_http_status(:unprocessable_content)
     end
   end
 

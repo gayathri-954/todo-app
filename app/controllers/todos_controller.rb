@@ -27,7 +27,7 @@ class TodosController < ApplicationController
     if todo.save
       render json: { todo: todo, message: "Todo created successfully" }, status: :created
     else
-      render json: { errors: todo.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: todo.errors.full_messages }, status: :unprocessable_content
     end
   end
 
